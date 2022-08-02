@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<form action="/withdrawamount" method="post">
+    <div class="mb-3">
+        <label for="AccountNumber" class="form-label">Account Number</label>
+        <input type="number" class="form-control" id="AccountNumber"  name="AccountNumber" required>
+        
+      </div>
+    
+
+  
+  
+  <div class="mb-3">
+    <label for="WithdrawAmount" class="form-label">Withdraw Amount</label>
+    <input type="number" class="form-control" id="WithdrawAmount"  name="WithdrawAmount" required >
+    
+  </div>
+
+  <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+
+{% endblock main %}

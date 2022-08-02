@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block main %}
+{% if msg %}
+    <div class="text-danger">{{msg}}</div>
+{% endif %}
+
+<table class="table table-bordered border-grey">
+    <thead>
+      <tr>
+        
+        <th scope="col">Customer Name</th>
+        <th scope="col">Account Number</th>
+        <th scope="col">Date Of Birth</th>
+        <th scope="col">Contact Number</th>
+        <th scope="col">Address</th>
+        <th scope="col">Balance</th>
+        <th text-align:center scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for customer in clist %}
+
+      <tr>
+       
+        <td>{{customer.0}}</td>
+        <td>{{customer.1}}</td>
+        <td>{{customer.2}}</td>
+        <td>{{customer.3}}</td>
+        <td>{{customer.4}}</td>
+        <td>{{customer.5}}</td>
+      
+        <td>
+            <a href="/customerdelete/{{customer[1]}}" class="btn btn-danger">Close</a>
+            <a href="/updateaccount/{{customer[1]}}" class="btn btn-warning">Update</a>
+      </tr>
+      {% endfor %}
+        
+      
+    </tbody>
+  </table>
+
+  {% endblock main %}
